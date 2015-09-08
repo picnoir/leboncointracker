@@ -14,10 +14,10 @@ stuff.
 
 That's kind of simple:
 
-0- Setup your database tables by running initdb.py
-1- Set a url to scrap according to your filters (you can just pick it up from your browser.)
-2- Hardcode it in scraper.py (told you, this code is a masterpiece of engineering).
-3- Run scraper.py.
+0. Setup your database tables by running initdb.py
+1. Set a url to scrap according to your filters (you can just pick it up from your browser.)
+2. Hardcode it in scraper.py (told you, this code is a masterpiece of engineering).
+3. Run scraper.py.
 
 #Troubleshooting
 
