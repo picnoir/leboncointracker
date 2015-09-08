@@ -11,8 +11,8 @@ class Appartment:
         self.type = type
 
     def save(self, cursor):
-        request_params = (self.price, self.surface, self.zip_code, self.nb_rooms,
-                            self.type, self.url)
+        request_params = (self.price, self.surface, self.zip_code,
+                          self.nb_rooms, self.type, self.url)
         cursor.execute('''INSERT INTO appartments (price, surface, zip_code,
                         nb_rooms, type, url) VALUES (?,?,?,?,?,?)''', request_params)
 
@@ -23,8 +23,8 @@ class Appartment:
         cursor = connection.cursor()
         cursor.execute('''CREATE TABLE appartments
                             (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                           price REAL NOT NULL, surface REAL NOT NULL,
-                            zip_code REAL NOT NULL, url text NOT NULL,
+                            price REAL NOT NULL, surface REAL NOT NULL,
+                            zip_code INT NOT NULL, url text NOT NULL,
                             nb_rooms text, type text)''')
         connection.commit()
         connection.close()

@@ -4,6 +4,7 @@ import sys
 import re
 import database
 import sqlite3
+import mail
 from bs4 import BeautifulSoup
 
 
@@ -31,8 +32,9 @@ def scrapItem(item_url):
 
 
 def scrapPage(page_url):
-    db_connection = sqlite3.connect('lbcScrap.sqlite3')
+    db_connection = sqlite3.connect('/home/minoulefou/Code/Python/leBonCoinNotifier/lbcScrap.sqlite3')
     db_cursor = db_connection.cursor()
+    flats = []
     try:
         page = urllib.request.urlopen(page_url).read()
     except Exception as err:
@@ -47,9 +49,12 @@ def scrapPage(page_url):
                 appartment_already_in_db(db_cursor, url):
                 appartment = scrapItem(url)
                 appartment.save(db_cursor)
+                flats.append(appartment)
                 print(url + " saved to db")
     db_connection.commit()
     db_connection.close()
+    if len(flats) > 0:
+        mail.send_mail(flats)
 
 page_url = "http://www.leboncoin.fr/locations/offres/ile_de_france/paris/?f=a&th=1&mre=1500&sqs=3"
 logging.info("Updating database.")
