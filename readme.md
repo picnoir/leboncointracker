@@ -1,4 +1,4 @@
-#Leboncoin scrapper (another one)
+# Leboncoin scrapper (another one)
 This is a basic leboncoin scrapper that I use to collect some data about
 renting prices in Paris.
 
@@ -10,7 +10,7 @@ just in case it will help somebody (even if it is very unlikely).
 Since this code is verrrrrry generic: it will work only with apartments-related
 stuff.
 
-#Howisworking?
+# Howisworking?
 
 That's kind of simple:
 
@@ -19,6 +19,6 @@ That's kind of simple:
 2. Hardcode it in scraper.py (told you, this code is a masterpiece of engineering).
 3. Run scraper.py.
 
-#Troubleshooting
+# Troubleshooting
 
 WOW, something is broken? Well, that's too bad, I will not maintain that shit… Sorry…
